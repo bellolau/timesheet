@@ -1,0 +1,17 @@
+{
+    "name": "bellolau/timesheet",
+    "description": "Timesheet interface",
+    "authors": [
+        {
+            "name": "Laurent Bello",
+            "email": "bellolau@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "breerly/zf1": "1.11.*"
+    },
+    "config": {
+        "vendor-dir": "library"
+    }
+}
