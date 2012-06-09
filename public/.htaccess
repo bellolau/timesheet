@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]
+
+php_flag magic_quotes_gpc off
+php_flag magic_quotes_runtime off
+php_value post_max_size 8M
+php_value upload_max_filesize 8M
+php_flag register_globals off
+php_flag short_open_tag off
+php_value memory_limit 128M

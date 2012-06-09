@@ -1,0 +1,32 @@
+table.crud {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.crud th {
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+    line-height: 20px;
+    background-color: #000;
+    color: #FFF;
+    font-weight: bold;
+}
+
+table.crud tr:nth-child(odd) {
+    background-color: #DDD;
+}
+
+table.crud td {
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #000;
+    overflow: hidden;
+    /* TODO: add ellipsis */
+    line-height: 20px;
+    text-align: right;
+}
+
+table.crud td.action {
+    text-align: center;
+}

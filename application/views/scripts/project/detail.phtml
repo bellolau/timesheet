@@ -1,0 +1,50 @@
+<h1><?php echo strtoupper($this->project->name); ?></h1>
+<p>Date de début : <?php echo $this->project->startDate->toString('dd/MM/yyyy'); ?></p>
+<p>Date de fin : <?php echo $this->project->endDate->toString('dd/MM/yyyy'); ?></p>
+<p>Avancement : <?php echo sprintf('%.1f', $this->project->progress * 100); ?></p>
+<table class="project-detail">
+    <tr>
+        <th>Sprint</th>
+        <th>Tâche</th>
+        <th>Estimé</th>
+        <th>Consommé</th>
+        <th>Reste à faire</th>
+        <th>Nouvel estimé</th>
+        <th>Ecart</th>
+        <th>Avancement</th>
+    </tr>
+    <tr class="project">
+        <td></td>
+        <td></td>
+        <td><?php echo $this->project->estimatedDuration; ?></td>
+        <td><?php echo $this->project->consumed; ?></td>
+        <td><?php echo $this->project->toBeDone; ?></td>
+        <td><?php echo $this->project->newEstimatedDuration; ?></td>
+        <td><?php echo $this->project->gap; ?></td>
+        <td><?php echo sprintf('%.1f', $this->project->progress * 100); ?></td>
+    </tr>
+    <?php foreach ($this->project->sprints as $sprint) : ?>
+        <tr class="sprint">
+            <td><?php echo $sprint->name; ?></td>
+            <td></td>
+            <td><?php echo $sprint->estimatedDuration; ?></td>
+            <td><?php echo $sprint->consumed; ?></td>
+            <td><?php echo $sprint->toBeDone; ?></td>
+            <td><?php echo $sprint->newEstimatedDuration; ?></td>
+            <td><?php echo $sprint->gap; ?></td>
+            <td><?php echo sprintf('%.1f', $sprint->progress * 100); ?></td>
+        </tr>
+        <?php foreach ($sprint->tasks as $task) : ?>
+            <tr class="task">
+                <td></td>
+                <td><?php echo $task->name; ?></td>
+                <td><?php echo $task->estimatedDuration; ?></td>
+                <td><?php echo $task->consumed; ?></td>
+                <td><?php echo $task->toBeDone; ?></td>
+                <td><?php echo $task->newEstimatedDuration; ?></td>
+                <td><?php echo $task->gap; ?></td>
+                <td><?php echo sprintf('%.1f', $task->progress * 100); ?></td>
+            </tr>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+</table>

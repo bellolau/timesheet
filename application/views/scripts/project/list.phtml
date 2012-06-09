@@ -1,0 +1,43 @@
+<a href="<?php echo $this->addUrl; ?>" class="addButton popup">Nouveau projet</a>
+<?php if ($this->elements->count() == 0) : ?>
+    <p>Aucun projet</p>
+<?php else: ?>
+    <?php foreach ($this->elements as $project) : ?>
+    <div class="project">
+        <h4><?php echo $project->name; ?></h4>
+        <div><?php echo sprintf('%.1f', $project->progress * 100); ?> %</div>
+        <a href="<?php printf($this->deleteUrl, $project->{$this->primaryKey}); ?>">Supprimer</a>
+        <a href="<?php printf($this->editUrl, $project->{$this->primaryKey}); ?>" class="popup">Modifier</a>
+    </div>
+    <?php endforeach; ?>
+    <!--<table class="crud">
+        <tr>
+            <?php foreach ($this->columns as $column) : ?>
+                <th><?php echo $column; ?></th>
+            <?php endforeach; ?>
+        </tr>
+        <?php foreach ($this->elements as $element) : ?>
+            <tr>
+                <?php foreach ($element as $key => $value) : ?>
+                    <?php if (isset($this->columns[$key])) : ?>
+                        <td>
+                            <?php if ($key === 'name') : ?>
+                                <a href="<?php echo $this->baseUrl('sprint/list/projectId/' . $element->{$this->primaryKey}); ?>">
+                                <?php endif; ?>
+                                <?php echo $value; ?>
+                                <?php if ($key === 'name') : ?>
+                                </a>
+                            <?php endif; ?>
+                        </td>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <td class="action">
+                    <a href="<?php printf($this->editUrl, $element->{$this->primaryKey}); ?>" class="popup">Modifier</a>
+                </td>
+                <td class="action">
+                    <a href="<?php printf($this->deleteUrl, $element->{$this->primaryKey}); ?>">Supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>-->
+<?php endif; ?>

@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+header, footer, section {
+    display: block;
+}
+
+body {
+    background: #FFF url(../../img/bg.jpg);
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 3px 5px;
+    border: 1px solid #D9D9D9;
+    font-size: 14px;
+    color: #222;
+}
+
+input[type="submit"],
+.addButton {
+    min-width: 80px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #3079ED;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.6);
+    line-height: 32px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFF;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+header {
+    overflow: hidden;
+    padding: 5px;
+    background-color: #2D2D2D;
+    color: #FFF;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+header form {
+    display: inline-block;
+	margin-left: 10px;
+}
+
+#page {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+}
+
+#container {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    margin-left: 200px;
+    box-sizing: border-box;
+    margin-left: 100px;
+    padding: 10px;
+    background-color: #F5F5F5;
+    background-color: #FFF;
+    -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.5) inset, -2px 0 2px rgba(0, 0, 0, 0.5) inset, 0 2px 2px rgba(0, 0, 0, 0.5) inset, 2px 0 2px rgba(0, 0, 0, 0.5) inset;
+}
+
+nav {
+    position: absolute;
+    width: 100px;
+}
+
+nav li {
+    padding: 10px;
+}
+
+nav a {
+    font-weight: bold;
+    color: #FFF;
+}
+
+form .field {
+    display: table;
+    width: 100%;
+}
+
+.field label,
+.field input {
+    display: table-cell;
+    width: 50%;
+}
+
+.field label {
+    padding: 5px;
+    text-align: right;
+}
+
+.button {
+    padding: 5px;
+    text-align: center;
+}
+
+ul.errors {
+    list-style-type: none;
+    color: #F44;
+    font-size: 14px;
+}
+
+ul.errors li {
+    padding: 5px;
+}
+
+.addButton {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.project {
+    display: inline-block;
+    width: 30%;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.project a {
+    float: right;
+    margin: 0 5px;
+}
+
+table.project-detail {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.project-detail tr.project {
+    background-color: #993300;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+}
+
+table.project-detail tr.sprint {
+    background-color: #DDDDDD;
+    color: #000000;
+    font-weight: bold;
+    text-align: right;
+}
+
+table.project-detail tr.task {
+    text-align: right;
+}
+
+table.project-detail td {
+    min-width: 100px;
+}
+
+footer {
+    clear: both;
+    padding: 4px;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+/*    -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5) inset;*/
+}

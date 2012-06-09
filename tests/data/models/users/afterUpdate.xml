@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+	<users userId="1" email="bellolau@gmail.com"
+		password="dcb255094cc4eb0cd91210867f0141772d7097db" firstname="Laurent" lastname="Bello"
+		role="member" active="1" created="2010-09-16 15:22:00"
+		lastModified="2010-09-16 15:22:00" lastConnected="0000-00-00 00:00:00"
+		tries="0" hash="340">
+	</users>
+	<users userId="2" email="test1@test.com"
+		password="81bf5806cff751676426d42fedea0925dcfc98b6" firstname="Test1" lastname="Test"
+		role="member" active="1" created="2010-09-18 16:51:00"
+		lastModified="2010-09-18 17:03:00" lastConnected="0000-00-00 00:00:00"
+		tries="0" hash="344">
+	</users>
+</dataset>

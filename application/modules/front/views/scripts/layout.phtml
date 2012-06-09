@@ -1,0 +1,43 @@
+<?php echo $this->doctype() . PHP_EOL ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Project</title>
+    <?php echo $this->headMeta()->setCharset('UTF-8') . PHP_EOL ?>
+    <?php echo $this->headLink()->appendStylesheet('/css/global.css') . PHP_EOL ?>
+    <?php echo $this->headLink()->appendStylesheet('/css/crud.css') . PHP_EOL ?>
+    <?php echo $this->headScript()->appendFile('/js/global.js') . PHP_EOL ?>
+</head>
+<body>
+
+<header>
+    <form action="<?php $this->url(array('controller'=>'search')); ?>" method="GET" class="right">
+        <input type="text" name="" value="" placeholder="Rechercher"/>
+    </form>
+    <?php if (!empty($this->user->infos['firstname'])) : ?>
+        <div  class="right">
+            <?php echo $this->translate->_('Bonjour'); ?> <b><?php echo $this->escape($this->user->infos['firstname']); ?></b>
+            <a href="<?php echo $this->logoutUrl; ?>"><?php echo $this->translate->_('Se déconnecter'); ?></a>
+        </div>
+    <?php endif; ?>
+    <h1>Notes</h1>
+</header>
+
+<section id="page">
+    <nav>
+        <ul>
+            <li>
+                <a href="">Lien 1</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="container">
+        <?php echo $this->layout()->content ?>
+    </div>
+</section>
+
+<footer>
+    <h3>&copy; Copyright</h3>
+</footer>
+
+</body>
+</html>

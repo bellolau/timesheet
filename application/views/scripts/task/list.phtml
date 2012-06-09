@@ -1,0 +1,36 @@
+<h1>Tâches</h1>
+<a href="<?php echo $this->addUrl; ?>" class="popup">Ajouter</a>
+<?php if ($this->elements->count() == 0) : ?>
+    <p>Aucune tâche</p>
+<?php else: ?>
+    <table class="crud">
+        <tr>
+            <?php foreach ($this->columns as $column) : ?>
+                <th><?php echo $column; ?></th>
+            <?php endforeach; ?>
+        </tr>
+        <?php foreach ($this->elements as $element) : ?>
+            <tr>
+                <?php foreach ($element as $key => $value) : ?>
+                    <?php if (isset($this->columns[$key])) : ?>
+                        <td>
+                            <?php if ($key === 'name') : ?>
+                                <a href="<?php echo $this->baseUrl('task/list/sprintId/' . $element->{$this->primaryKey}); ?>">
+                                <?php endif; ?>
+                                <?php echo $value; ?>
+                                <?php if ($key === 'name') : ?>
+                                </a>
+                            <?php endif; ?>
+                        </td>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <td class="action">
+                    <a href="<?php printf($this->editUrl, $element->{$this->primaryKey}); ?>" class="popup">Modifier</a>
+                </td>
+                <td class="action">
+                    <a href="<?php printf($this->deleteUrl, $element->{$this->primaryKey}); ?>">Supprimer</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php endif; ?>

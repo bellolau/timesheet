@@ -1,0 +1,27 @@
+<phpunit bootstrap="./tests/Bootstrap.php" colors="true">
+	<testsuites name="project">
+		<testsuite name="project">
+			<directory>./tests/application</directory>
+		</testsuite>
+		<testsuite name="library">
+			<directory>./tests/library/My</directory>
+		</testsuite>
+	</testsuites>
+	
+	<filter>
+		<whitelist>
+			<directory suffix=".php">./application</directory>
+			<directory suffix=".php">./library/My</directory>
+			<exclude>
+				<directory suffix=".tpl">./application</directory>
+			</exclude>
+		</whitelist>
+	</filter>
+
+	<logging>
+		<log type="testdox-html" target="./tests/log/testdox.html"/>
+		<log type="coverage-html" target="./tests/log/tests_report" charset="UTF-8"
+			 yui="true" highlight="false" lowUpperBound="35"
+			 highLowerBound="70"/>
+	</logging>
+</phpunit>
