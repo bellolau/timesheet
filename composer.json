@@ -1,0 +1,17 @@
+{
+    "name": "timehseet",
+    "description": "Timesheet tool",
+    "authors": [
+        {
+            "name": "Laurent Bello",
+            "email": "bellolau@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "simukti/zf1": "1.12.*"
+    },
+    "config": {
+        "vendor-dir": "library"
+    }
+}

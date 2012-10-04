@@ -1,0 +1,42 @@
+{
+    "hash": "3e298e6b2177ffd5179305292e058f35",
+    "packages": [
+        {
+            "name": "simukti/zf1",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/simukti/zf1.git",
+                "reference": "1.12.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/simukti/zf1/get/1.12.0.zip",
+                "reference": "1.12.0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.10"
+            },
+            "time": "2012-09-05 07:39:18",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-0": {
+                    "Zend_": ""
+                }
+            },
+            "include-path": [
+                ""
+            ]
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
+}
