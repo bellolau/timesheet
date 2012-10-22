@@ -14,6 +14,14 @@
 }());
 
 $(window).load(function() {
+    console.log('load');
+    $('#loader').show();
+    $('#container').hide();
+    var url = window.location.hash.substr(1);
+    if (url != '') {
+        loadPageWithHash();
+    }
+
     $('#popup').dialog({
         autoOpen: false,
         modal: true,
@@ -24,16 +32,21 @@ $(window).load(function() {
     $(window).bind('hashchange', function(event) {
         event.preventDefault();
         console.log('hashchange');
+        console.log(window.location.hash.substr(1));
         loadPageWithHash();
     });
 
     function loadPageWithHash() {
         var url = window.location.hash.substr(1);
+        $('#loader').show();
         $.ajax(url, {
             success: function(data) {
-                $('#container').html(data);
+                $('#container').html(data).show();
+                $('#loader').hide();
             },
             error: function() {
+                $('#container').show();
+                $('#loader').hide();
                 console.log('error');
             }
         });
