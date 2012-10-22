@@ -19,11 +19,6 @@ if (!defined('APPLICATION_ENV')) {
     } else {
         define('APPLICATION_ENV', $environment);
     }
-    
-}
-
-if (!defined('ZF_VERSION')) {
-    define('ZF_VERSION', '1.10.7');
 }
 
 // Ensure /application and /library is on include_path
@@ -31,7 +26,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
 	DOCUMENT_ROOT,
     DOCUMENT_ROOT . '/application',
 	DOCUMENT_ROOT . '/library',
-    DOCUMENT_ROOT . '/library/ZendFramework-' . ZF_VERSION . '-minimal/library',
+    DOCUMENT_ROOT . '/library/simukti/zf1',
 	get_include_path()
 )));
 

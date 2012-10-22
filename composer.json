@@ -1,6 +1,6 @@
 {
-    "name": "bellolau/timesheet",
-    "description": "Timesheet interface",
+    "name": "bellolau/timehseet",
+    "description": "Timesheet tool",
     "authors": [
         {
             "name": "Laurent Bello",
@@ -9,7 +9,7 @@
     ],
     "require": {
         "php": ">=5.3",
-        "breerly/zf1": "1.11.*"
+        "simukti/zf1": "1.12.*"
     },
     "config": {
         "vendor-dir": "library"
