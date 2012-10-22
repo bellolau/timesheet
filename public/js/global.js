@@ -14,10 +14,11 @@
 }());
 
 $(window).load(function() {
-    console.log('load');
     $('#loader').show();
     $('#container').hide();
     var url = window.location.hash.substr(1);
+    url = url !== '' ? url : '/';
+    console.log('load : ' + url);
     if (url != '') {
         loadPageWithHash();
     }
@@ -32,7 +33,6 @@ $(window).load(function() {
     $(window).bind('hashchange', function(event) {
         event.preventDefault();
         console.log('hashchange');
-        console.log(window.location.hash.substr(1));
         loadPageWithHash();
     });
 
