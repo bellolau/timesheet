@@ -1,0 +1,2 @@
+# Edit the exact lines to put in the crontab here
+# m h  dom mon dow   command

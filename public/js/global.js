@@ -14,11 +14,14 @@
 }());
 
 $(window).load(function() {
-	var url = window.location.hash.substr(1);
-	console.log(url);
-	if (url != '') {
-		loadPageWithHash();
-	}
+    $('#loader').show();
+    $('#container').hide();
+    var url = window.location.hash.substr(1);
+    url = url !== '' ? url : '/';
+    console.log('load : ' + url);
+    if (url != '') {
+        loadPageWithHash();
+    }
 
     $('#popup').dialog({
         autoOpen: false,
@@ -35,11 +38,15 @@ $(window).load(function() {
 
     function loadPageWithHash() {
         var url = window.location.hash.substr(1);
+        $('#loader').show();
         $.ajax(url, {
             success: function(data) {
-                $('#container').html(data);
+                $('#container').html(data).show();
+                $('#loader').hide();
             },
             error: function() {
+                $('#container').show();
+                $('#loader').hide();
                 console.log('error');
             }
         });

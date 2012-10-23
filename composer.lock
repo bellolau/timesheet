@@ -1,5 +1,5 @@
 {
-    "hash": "3e298e6b2177ffd5179305292e058f35",
+    "hash": "dbeabd08908422730e08f1d30e2a7e0f",
     "packages": [
         {
             "name": "simukti/zf1",
@@ -28,6 +28,15 @@
             },
             "include-path": [
                 ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "Zend Framework 1 library only, without tests, demos, bin, etc.",
+            "homepage": "https://bitbucket.org/simukti/zf1",
+            "keywords": [
+                "ZF1",
+                "zend framework 1"
             ]
         }
     ],

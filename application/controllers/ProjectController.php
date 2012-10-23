@@ -23,7 +23,7 @@ class ProjectController extends My_Controller_Crud_Abstract {
                     $this->_helper->viewRenderer->setNoRender(true);
                     $response = new stdClass();
                     $response->result = 'ok';
-                    $this->_response->setHeader('Content-type', 'application/json');
+                    $this->_response->setHeader('Content-type', 'application/json;charset=utf8');
                     echo Zend_Json::encode($response);
                     return;
                 }
@@ -33,6 +33,41 @@ class ProjectController extends My_Controller_Crud_Abstract {
         $this->render('edit');
     }
 
+    public function editAction() {
+        $id = $this->_getParam($this->_primaryKey);
+
+        if ($id === null) {
+            $this->_redirect($this->_controllerUrl);
+        } else {
+            $row = $this->_model->find($id)->current();
+        }
+
+        if ($row === null) {
+            $this->_redirect($this->_controllerUrl);
+        }
+
+        $this->_form->populate($row->toArray());
+
+        if ($this->_request->isPost()) {
+            if ($this->_form->isValid($this->_request->getPost())) {
+                $row->setFromArray($this->_form->getValues());
+                $row->save();
+                
+                if ($this->_request->isXmlHttpRequest() !== true) {
+                    $this->_redirect($this->_controllerUrl . '/index/projectId/' . $row->projectId);
+                    return;
+                } else {
+                    $this->_helper->viewRenderer->setNoRender(true);
+                    $response = new stdClass();
+                    $response->result = 'ok';
+                    $this->_response->setHeader('Content-type', 'application/json;charset=utf8');
+                    echo Zend_Json::encode($response);
+                    return;
+                }
+            }
+        }
+    }
+    
     public function detailAction() {
         $id = $this->_getParam('id');
 

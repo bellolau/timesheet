@@ -15,7 +15,7 @@
                     <?php if (isset($this->columns[$key])) : ?>
                         <td>
                             <?php if ($key === 'name') : ?>
-                                <a href="<?php echo $this->baseUrl('task/list/sprintId/' . $element->{$this->primaryKey}); ?>">
+                                <a href="<?php echo $this->baseUrl('tracking/list/taskId/' . $element->{$this->primaryKey}); ?>">
                                 <?php endif; ?>
                                 <?php echo $value; ?>
                                 <?php if ($key === 'name') : ?>

@@ -19,7 +19,7 @@ class Model_Trackings extends My_Model_Crud_Abstract {
     protected $_columns = array(
         'id' => 'Id',
         'duration' => 'Durée',
-        'newEstimatedDuration' => 'Nouvelle durée estimée'
+        'newEstimatedDuration' => 'Reste à faire'
     );
 
     public function getAll($sprintId) {

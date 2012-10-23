@@ -14,7 +14,7 @@ class Form_Tracking extends My_Form_Crud_Abstract {
         $this->addElement('text', 'duration', $elementOptions);
 
         $elementOptions = array(
-            'label' => 'Temps restant',
+            'label' => 'Reste à faire',
             'required' => true,
             'decorators' => $this->_elementDecorators,
             'validators' => array('NotEmpty')
