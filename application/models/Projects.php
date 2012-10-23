@@ -21,7 +21,7 @@ class Model_Projects extends My_Model_Crud_Abstract {
         'id' => 'Id',
         'name' => 'Nom',
         'reference' => 'Référence',
-        'date' => 'Date de création'
+        'sold' => 'Vendu'
     );
 
     public function insert(array $data) {

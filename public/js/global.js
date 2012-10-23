@@ -14,6 +14,12 @@
 }());
 
 $(window).load(function() {
+	var url = window.location.hash.substr(1);
+	console.log(url);
+	if (url != '') {
+		loadPageWithHash();
+	}
+
     $('#popup').dialog({
         autoOpen: false,
         modal: true,

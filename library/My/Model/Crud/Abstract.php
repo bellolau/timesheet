@@ -12,9 +12,13 @@ abstract class My_Model_Crud_Abstract extends Zend_Db_Table_Abstract {
         }
     }
 
+	public function getCols() {
+		return $this->_getCols();
+	}
+	
     public function getColumns() {
         if (empty($this->_columns)) {
-            return $this->_getCols();
+            return $this->getCols();
         } else {
             return $this->_columns;
         }

@@ -134,7 +134,7 @@ ul.errors li {
     text-decoration: none;
 }
 
-.project {
+/*.project {
     display: inline-block;
     width: 30%;
     margin: 5px;
@@ -149,7 +149,7 @@ ul.errors li {
 .project a {
     float: right;
     margin: 0 5px;
-}
+}*/
 
 table.project-detail {
     width: 100%;

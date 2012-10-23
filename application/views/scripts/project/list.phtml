@@ -15,6 +15,9 @@
             <?php foreach ($this->columns as $column) : ?>
                 <th><?php echo $column; ?></th>
             <?php endforeach; ?>
+			<th>Consommé</th>
+			<th>Conso / Vendu</th>
+			<th>Avancement</th>
         </tr>
         <?php foreach ($this->elements as $element) : ?>
             <tr>
@@ -31,6 +34,9 @@
                         </td>
                     <?php endif; ?>
                 <?php endforeach; ?>
+				<td><?php echo $element->consumed; ?></td>
+				<td><?php echo sprintf('%.1f', $element->consumedOnSold * 100); ?> %</td>
+				<td><?php echo sprintf('%.1f', $element->progress * 100); ?> %</td>
                 <td class="action">
                     <a href="<?php printf($this->editUrl, $element->{$this->primaryKey}); ?>" class="popup">Modifier</a>
                 </td>

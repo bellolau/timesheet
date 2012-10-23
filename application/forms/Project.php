@@ -19,6 +19,13 @@ class Form_Project extends My_Form_Crud_Abstract {
         );
         $this->addElement('text', 'reference', $nameOptions);
 
+        $nameOptions = array(
+            'label' => 'Vendu',
+            'required' => true,
+            'decorators' => $this->_elementDecorators
+        );
+        $this->addElement('text', 'sold', $nameOptions);
+
         $submitOptions = array(
             'label' => 'Valider',
             'decorators' => $this->_buttonDecorators

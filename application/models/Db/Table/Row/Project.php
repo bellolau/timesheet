@@ -5,7 +5,7 @@
  *
  * @author bellolau
  */
-class Model_Db_Table_Row_Project extends Zend_Db_Table_Row_Abstract {
+class Model_Db_Table_Row_Project extends My_Db_Table_Row {
 
     public function __construct(array $config = array()) {
         parent::__construct($config);
@@ -18,6 +18,7 @@ class Model_Db_Table_Row_Project extends Zend_Db_Table_Row_Abstract {
         $this->_data['newEstimatedDuration'] = 0;
         $this->_data['gap'] = 0;
         $this->_data['progress'] = 0;
+        $this->_data['consumedOnSold'] = 0;
 
         if (!empty($this->id)) {
             $this->_data['sprints'] = $this->findDependentRowset('Model_Sprints');
@@ -53,9 +54,13 @@ class Model_Db_Table_Row_Project extends Zend_Db_Table_Row_Abstract {
             $this->endDate = $endDate;
             $this->gap = $this->newEstimatedDuration - $this->estimatedDuration;
         }
-
+		
         if ($this->newEstimatedDuration > 0) {
             $this->_data['progress'] = $this->consumed / $this->newEstimatedDuration;
+        }
+
+		if ($this->sold > 0) {
+            $this->_data['consumedOnSold'] = $this->consumed / $this->sold;
         }
     }
 

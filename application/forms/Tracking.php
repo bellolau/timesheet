@@ -14,12 +14,20 @@ class Form_Tracking extends My_Form_Crud_Abstract {
         $this->addElement('text', 'duration', $elementOptions);
 
         $elementOptions = array(
-            'label' => 'Nouvelle durée estimée',
+            'label' => 'Temps restant',
             'required' => true,
             'decorators' => $this->_elementDecorators,
             'validators' => array('NotEmpty')
         );
         $this->addElement('text', 'newEstimatedDuration', $elementOptions);
+
+        $elementOptions = array(
+            'label' => 'Date',
+            'required' => true,
+            'decorators' => $this->_elementDecorators,
+            'validators' => array('NotEmpty')
+        );
+		$this->addElement('text', 'date', $elementOptions);
 
         $elementOptions = array(
             'decorators' => $this->_elementDecorators
